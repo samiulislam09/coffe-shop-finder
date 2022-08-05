@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Banner from '../components/banner'
 import Card from '../components/card'
 import styles from '../styles/Home.module.css'
-import datas from './stores.json'
+import coffeStoresData from './stores.json'
 
 export default function Home({ allData }) {
   
@@ -20,7 +20,7 @@ export default function Home({ allData }) {
       <main className={styles.main}>
         <Banner buttonText='Find stores nearby' handleOnBannerClick={handleOnBannerClick}></Banner>
       </main>
-      <div className={styles.cardcontainer}>
+      <div className='grid mx-auto gap-5 grid-cols-1 lg:grid-cols-3 md:grid-cols-2'>
         {
         allData.map(data => {
           return (
@@ -35,7 +35,7 @@ export default function Home({ allData }) {
 export async function getStaticProps() {
     return {
       props: {
-        allData: datas
+        allData: coffeStoresData
       }
     }
 }

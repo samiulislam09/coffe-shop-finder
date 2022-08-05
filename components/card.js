@@ -4,12 +4,14 @@ import styles from '../styles/Card.module.css'
 
 function Card({coffesoreInfo}) {
     return (
-        <div className={styles.card}>
+        <div className="card w-96 bg-blue-600 cursor-pointer shadow-xl">
             <Link href={`coffee-store/${coffesoreInfo.id}`}>
-                <a className={styles.a}>
-                    <h2 className={styles.h2}>{coffesoreInfo.name}</h2>
-                    <Image src={coffesoreInfo.image} width={280} height={180} alt={coffesoreInfo.alt} />
-                </a>
+                <div>
+                    <div className="card-body items-center text-center">
+                        <h2 className="card-title">{coffesoreInfo.name}</h2>
+                        <p>{coffesoreInfo.location}</p>
+                    </div>
+                </div>
             </Link>
         </div>
     );
